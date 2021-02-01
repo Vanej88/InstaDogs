@@ -117,7 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "main", function() { return main; });
 function main() {
   // code goes here
-  console.log("* Webpack template is working fine 2");
+  console.log("* Webpack template is working fine");
 }
 
 /***/ }),
