@@ -45,5 +45,23 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.container {
+  max-width: 900px;
+  margin: 0 auto; }
+
+.header {
+  background-color: #2C2936; }
+  .header__logo {
+    width: 20px;
+    height: 20px;
+    border: 1px white solid; }
+
+.fondo__image {
+  display: flex; }
+
+.main {
+  background-image: url(b1497656eaaa6dadd101139fa5c0289d.png);
+  background-repeat: no-repeat; }
+
 
 /*# sourceMappingURL=build.css.map*/
