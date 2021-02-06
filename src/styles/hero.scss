@@ -3,6 +3,9 @@
     height:100vh;
     display:flex;
     align-items: center;
+    animation-name: change-background; 
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
    
     &__title{
         margin-bottom: 30px;
@@ -58,4 +61,11 @@
         background-color: #ff794c;
         
     }
+}
+
+@keyframes change-background{
+    0% {background-color: #8BBA96};
+    25% {background-color: #d2ba93};
+    50% {background-color: #8bba96};
+    100% {background-color: #8BBA96}
 }
