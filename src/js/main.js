@@ -1,4 +1,6 @@
 export function main() {
-  // code goes here
-  console.log("* Webpack template is working fine");
+  fetch("https://dog.ceo/api/breeds/list/all")
+    .then(response => response.json)
+    .then(data => console.log(data))
+  
 }
