@@ -1,0 +1,71 @@
+.hero{
+    background-color: #8BBA96;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    animation-name: change-background; 
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+   
+    &__title{
+        margin-bottom: 30px;
+    }
+
+    &__box-text{
+        line-height: 1.2;
+        margin-bottom: 30px;
+        font-size: 24px;
+        width: 45%; 
+    }
+    
+    &__image{
+        position: absolute;
+        right: 150px; 
+        top: 150px; 
+
+        &-elem{
+            width: 350px;
+            height: 450px;   
+        }
+    }
+
+    &__select{
+        background: transparent;
+        border: none;
+        box-shadow: 0 0 0 #0000;
+        cursor: pointer;
+        font-size: 14px;
+        height: 30px;
+        padding: 5px;
+        width: 250px;
+    }
+
+    &__option{
+        background-color: #d2ba93;
+        
+    }
+
+    &__btn-primary{
+        color:white;
+        display: block;
+        margin-top: 20px;
+        background-color: #2C2936;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 8px;
+        font-size: 18px;
+        
+    }
+
+    &__btn-primary:hover{
+        background-color: #4c475a;
+        
+    }
+}
+
+@keyframes change-background{
+    0% {background-color: #8BBA96};
+    25% {background-color: #d2ba93};
+    50% {background-color: #8bba96};
+    100% {background-color: #8BBA96}
+}
