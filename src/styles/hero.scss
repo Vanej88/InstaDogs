@@ -46,19 +46,19 @@
     }
 
     &__btn-primary{
+        color:white;
         display: block;
         margin-top: 20px;
-        background: transparent;
+        background-color: #2C2936;
         border: 1px solid black;
         border-radius: 10px;
         padding: 8px;
-        color:white;
         font-size: 18px;
         
     }
 
     &__btn-primary:hover{
-        background-color: #ff794c;
+        background-color: #4c475a;
         
     }
 }
