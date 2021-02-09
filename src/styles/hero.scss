@@ -29,10 +29,15 @@
         }
     }
 
+    &__select::-ms-expand{
+        display: none; 
+    }
+
     &__select{
-        
+        appearance: none;
+        border:none;
         border-radius: 10px;
-        box-shadow: 0 0 0 #0000;
+        box-shadow: -2px 2px 3px #2C2936;
         cursor: pointer;
         font-size: 14px;
         height: 30px;
