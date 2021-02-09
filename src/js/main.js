@@ -13,8 +13,7 @@ export function main() {
         option.innerHTML = item; 
         lista.appendChild(option)
       }
-      
-     
     }
-      
-    )}
+  )}
+
+
