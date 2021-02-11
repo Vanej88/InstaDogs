@@ -7,18 +7,10 @@
         margin-top: 16px;
         margin-left: 50px;
     }
-}
-
-.header__logo{
-
-}
-.InstaDogs{
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.header__box{
-    display:flex;
-    align-items: center;
-    padding-left: 6px;
+    &__span{
+        font-family: 'Lobster', cursive;
+        font-size: 60px;
+        color: white;
+        margin-left: 6px;
+    }
 }
