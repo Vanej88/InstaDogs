@@ -12,5 +12,11 @@
         font-weight: 600;
         color: #ffffff;
     }
+
+    @media only screen and (max-width: 676px){
+        .menu__link{
+            font-size: 10px;
+        }
+    }
 }
 
