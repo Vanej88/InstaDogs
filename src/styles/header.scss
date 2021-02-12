@@ -1,16 +1,40 @@
 .header{
     background-color: #2c2936;
+    padding: 20px 0;
 
+    &__container {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__box{
+        display: flex;
+        align-items: center;
+    }
     &__logo{
+
         width: 50px;
         height: 50px;
-        margin-top: 16px;
-        margin-left: 50px;
     }
     &__span{
         font-family: 'Lobster', cursive;
-        font-size: 60px;
+        font-size: 36px;
         color: white;
-        margin-left: 6px;
+        margin-left: 8px;
     }
+    @media only screen and (max-width: 676px){
+        .header__logo{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 676px){
+        .header__span{
+            font-size: 16px;
+            margin-left: 4px;
+        }
+    }
+
 }
