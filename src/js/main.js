@@ -12,24 +12,36 @@ export function main() {
         option.setAttribute('value', item)
         option.innerHTML = item; 
         lista.appendChild(option)
-      }
-    }
-  )
+      
+        let buttom = document.querySelector(".hero__btn-primary")
+        buttom.onclick = callback; 
+        const raza = option.value
 
-  const raza = document.querySelector("#cards"); 
+        function callback(event){
+    
+          const galeria = document.querySelector('.gallery__box')
+          
+          fetch(`https://dog.ceo/api/breed/${raza}/images/random/8`)
+          .then(response => response.json())
+          .then(data => {
+            let dogImg = data.message;
+            console.log(dogImg)
+            for(let item of dogImg){
+              let card = document.createElement("img");
+              let contenedorCard = document.createElement("div"); 
+              card.setAttribute('src', item); 
+              //card.setAttribute('class', 'gallery__img');
+              card.classList.add('.gallery__box');
+              card.classList.add('.gallery__img'); 
+              card.classList.add('.container-gallery');
+              galeria.appendChild(card)
+            }
+            
+          })
+      
+        }
   
-  // fetch(`https://dog.ceo/api/breed/beagle/images/random`)
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     let dogImg = data.message;
-  //     console.log(dogImg)
-  //       let card = document.createElement("img");
-  //       card.setAttribute('src', dogImg); 
-  //       raza.appendChild(card)
-      
-      
-  //   })
+    }
+  })}
 
-}
-
-
+  
