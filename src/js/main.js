@@ -18,17 +18,17 @@ export function main() {
 
   const raza = document.querySelector("#cards"); 
   
-  fetch(`https://dog.ceo/api/breed/beagle/images/random`)
-    .then(response => response.json())
-    .then(data => {
-      let dogImg = data.message;
-      console.log(dogImg)
-        let card = document.createElement("img");
-        card.setAttribute('src', dogImg); 
-        raza.appendChild(card)
+  // fetch(`https://dog.ceo/api/breed/beagle/images/random`)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     let dogImg = data.message;
+  //     console.log(dogImg)
+  //       let card = document.createElement("img");
+  //       card.setAttribute('src', dogImg); 
+  //       raza.appendChild(card)
       
       
-    })
+  //   })
 
 }
 
