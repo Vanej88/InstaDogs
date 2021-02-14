@@ -1,21 +1,24 @@
 .footer{
     background-color: #2c2936;
+    padding: 20px 0;
     
         
         &__logo{
+            display: flex;
+            align-items: center;
 
             &-img{
                 width: 50px;
                 height: 50px;
-                margin-top: 6px;
-                margin-left: 50px;
+                //margin-top: 6px;
+                //margin-left: 50px;
             }
 
             &-span{
                 font-family: 'Lobster', cursive;
-                font-size: 60px;
+                font-size: 36px;
                 color: white;
-                margin-left: 6px;
+                margin-left: 8px;
             }
         
         }
@@ -25,7 +28,28 @@
             text-decoration: none;
             color: white;
         }
+
+        @media only screen and (max-width: 676px){
+            .footer__logo-img{
+                width: 20px;
+                height: 20px;
+                margin-left: 6px;
+            }
+        }
     
+        @media only screen and (max-width: 676px){
+            .footer__logo-span{
+                font-size: 16px;
+                margin-left: 4px;
+            }
+        }
+    
+        @media only screen and (max-width: 676px){
+            .footer-aviso{
+                font-size: 8px;
+                margin-right: 6px;
+            }
+        }
 }
 .container-footer{
     display: flex;
@@ -34,3 +58,4 @@
 
     
 }
+
