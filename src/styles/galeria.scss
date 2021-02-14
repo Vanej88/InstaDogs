@@ -1,21 +1,36 @@
 .gallery{
-    height: 100vh;
-    width: 100%;
 
-    &__box{
+    padding: 60px 0 40px;
+
+    &__title{
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    &__container{
+        display:flex;
+        flex-wrap: wrap;
+        margin-left: -10px; 
+        margin-right: -10px; 
+    }
+
+    &__col{
         width: 25%;
+        padding: 0 10px;
+        margin-bottom: 20px; 
+    }
+
+    &__box-img{
+       
         border-radius: 14px;
         overflow: hidden; 
-        margin: 10px;
         
     }
 
     &__img{
         width:100%;
-        height: auto; 
+        height: 250px;
+        object-fit: cover;
     }
 }
 
-.container-gallery{
-    display: flex;
-}
