@@ -22,14 +22,35 @@
     color: white;
     margin-left: 8px;
   }
-  @media only screen and (max-width: 676px) {
-    .header {
-      &__logo {
-        display: none;
+}
+
+@media only screen and (max-width: 676px) {
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+
+    &__logo {
+     width: 25px;
+     height: 25px;
+     margin-left: 6px;
+    }
+    &__span {
+      font-size: 18px;
+    }
+  }
+  
+  .menu{
+    &__flotante{
+      //width: 100vw;
+      height: 100%;
+      display: block;
+      &__flotante-img{
+        width: 20px;
+        height: 20px;
+        display: block;
       }
-      &__span {
-        display: none;
-      }
+     
     }
   }
 }
