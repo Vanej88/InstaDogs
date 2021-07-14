@@ -37,6 +37,7 @@
 }
 
 @media only screen and (max-width: 676px) {
+
     .gallery {
 
         &__title{
@@ -61,5 +62,9 @@
         &__col{
           width: 50%;
         }
+    }
+
+    .gallery-hidden{
+        display: none;
     }
 }
