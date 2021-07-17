@@ -25,6 +25,12 @@
   }
 }
 
+@media only screen and (max-width:768px){
+  .header{
+    padding: 21px 16px;
+  }
+}
+
 @media only screen and (max-width: 676px) {
   .header {
     display: flex;

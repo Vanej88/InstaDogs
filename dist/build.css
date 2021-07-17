@@ -86,6 +86,10 @@ h1 {
     color: white;
     margin-left: 8px; }
 
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 21px 16px; } }
+
 @media only screen and (max-width: 676px) {
   .header {
     display: flex;
@@ -122,12 +126,15 @@ h1 {
   font-weight: 600;
   color: #ffffff; }
 
+@media only screen and (max-width: 768px) {
+  .menu__link:hover {
+    color: #8bba96; } }
+
 @media only screen and (max-width: 676px) {
   .menu__btn {
-    display: block;
-    position: absolute;
-    right: 16px; }
+    display: block; }
   .menu__list {
+    background-color: #8bba96;
     flex-direction: column;
     position: fixed;
     left: 0;
@@ -136,9 +143,11 @@ h1 {
     align-items: center;
     padding: 20px 0;
     height: calc(100% - 65px);
-    overflow-y: auto; }
+    overflow-y: auto;
+    left: 100%;
+    transition: left 0.3s; }
   .menu__item {
-    margin-left: 40px;
+    margin: 16px 0;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content; }
@@ -146,7 +155,11 @@ h1 {
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
-    color: #ffffff; } }
+    color: #ffffff; }
+  .menu__link:hover {
+    color: #2c2936; }
+  .menu__list-visible {
+    left: 0; } }
 
 .hero {
   background-color: #8bba96;
@@ -253,7 +266,23 @@ h1 {
   100% {
     background-color: #8bba96; } }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
+  .hero__title {
+    margin-left: 28px; }
+  .hero__box-text {
+    margin-left: 28px;
+    font-size: 16px; }
+  .hero__image {
+    position: absolute;
+    right: 90px;
+    top: 200px; }
+    .hero__image-elem {
+      width: 150px;
+      height: 200px; }
+  .select {
+    margin-left: 28px; } }
+
+@media only screen and (max-width: 676px) {
   .hero {
     display: flex;
     flex-direction: column; }
@@ -292,7 +321,7 @@ h1 {
       display: flex;
       flex-direction: column; }
     .hero__btn-primary {
-      height: 37px;
+      height: 28px;
       width: 57px;
       margin-top: 20px;
       margin-left: 10px;
@@ -305,13 +334,22 @@ h1 {
       display: flex;
       align-items: center;
       justify-content: center; }
+    .hero__select {
+      font-size: 16px; }
   .select {
     height: 15px;
-    font-size: 14px;
+    font-size: 10px;
     padding: 4px;
     width: 5px;
     margin-left: 10px;
-    margin-top: 20px; } }
+    margin-top: 20px;
+    line-height: 2; }
+  .hero-hidden {
+    display: none; }
+  .background-hero {
+    background-color: #d2ba93; }
+  .select-hidden {
+    display: none; } }
 
 .gallery {
   padding: 60px 0 40px; }
@@ -336,6 +374,13 @@ h1 {
     -o-object-fit: cover;
        object-fit: cover; }
 
+@media only screen and (max-width: 768px) {
+  .gallery__title {
+    margin-left: 28px; }
+  .gallery__container {
+    margin-left: 16px;
+    margin-right: 16px; } }
+
 @media only screen and (max-width: 676px) {
   .gallery__title {
     font-size: 16px;
@@ -351,7 +396,9 @@ h1 {
     margin-left: 15px;
     margin-right: 15px; }
   .gallery__col {
-    width: 50%; } }
+    width: 50%; }
+  .gallery-hidden {
+    display: none; } }
 
 .footer {
   background-color: #2c2936;
@@ -371,24 +418,30 @@ h1 {
     font-size: 15px;
     text-decoration: none;
     color: white; }
-  @media only screen and (max-width: 676px) {
-    .footer .footer__logo-img {
-      width: 20px;
-      height: 20px;
-      margin-left: 6px; } }
-  @media only screen and (max-width: 676px) {
-    .footer .footer__logo-span {
-      font-size: 16px;
-      margin-left: 4px; } }
-  @media only screen and (max-width: 676px) {
-    .footer .footer-aviso {
-      font-size: 8px;
-      margin-right: 6px; } }
 
 .container-footer {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    padding: 16px; } }
+
+@media only screen and (max-width: 676px) {
+  .footer__logo-img {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px; }
+  .footer__logo-span {
+    font-size: 16px;
+    margin-left: 4px; }
+  .footer-aviso {
+    font-size: 8px;
+    margin-right: 6px; } }
+
+.footer-hidden {
+  display: none; }
 
 
 /*# sourceMappingURL=build.css.map*/

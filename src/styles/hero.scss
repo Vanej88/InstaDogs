@@ -30,8 +30,8 @@
   }
 
     &__control {
-        display: flex;  
-        align-items: center;
+      display: flex;  
+      align-items: center;
     }
 
     /* Reset Select */
@@ -93,12 +93,12 @@
   }
 
   &__btn-primary{
-        color:white;
-        display: block;
-        margin-left: 8px; 
-        background-color: #2C2936;
-        border-radius: 4px;
-        padding: 11px 16px;
+    color:white;
+    display: block;
+    margin-left: 8px; 
+    background-color: #2C2936;
+    border-radius: 4px;
+    padding: 11px 16px;
     }
 
   &__btn-primary:hover {
@@ -125,7 +125,35 @@
   } 
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px){
+  .hero{
+    &__title {
+      margin-left: 28px;
+    }
+
+    &__box-text {
+      margin-left: 28px;
+      font-size: 16px; 
+    }
+
+    &__image {
+      position: absolute;
+      right: 90px;
+      top: 200px;
+  
+      &-elem {
+        width: 150px;
+        height: 200px;
+      }
+    }
+  }
+
+  .select{
+    margin-left: 28px;
+  }
+} 
+
+@media only screen and (max-width: 676px) {
   
   .hero{
     display: flex;
@@ -182,7 +210,7 @@
     }
 
     &__btn-primary {
-      height: 37px;
+      height: 32px;
       width: 57px; 
       margin-top: 20px;
       margin-left: 10px;
@@ -200,19 +228,28 @@
       align-items: center;
       justify-content: center;
     }
+
+    &__select{
+      font-size: 16px;
+    }
   }
 
   .select {
     height: 15px; 
-    font-size:14px;
+    font-size:12px;
     padding: 4px;
     width: 5px;
     margin-left: 10px;
     margin-top: 20px;
+    line-height: 4;
   }
 
   .hero-hidden{
     display:none;
+  }
+
+  .background-hero{
+    background-color: #d2ba93;
   }
 
   .select-hidden{
