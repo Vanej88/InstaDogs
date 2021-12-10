@@ -1,0 +1,27 @@
+.contact{
+
+    max-width: 500px;
+    margin: 0 auto;
+
+    &__text{
+        margin-bottom: 8px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+}
+
+.form-label{
+    margin: 16px 0px;
+}
+
+.form-input{
+    background-color: transparent;
+    border: 1px solid #2C2936;
+    border-radius: 8px;
+    padding: 8px;
+}

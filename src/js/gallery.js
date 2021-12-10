@@ -1,7 +1,20 @@
+// let gallery = document.querySelector(".menu__link--gallery")
+// gallery.onclick = main(); 
+
+//   const hero = document.querySelector('.hero__control'); 
+//   const template = `
+//     <div class="select">
+//       <select class="hero__select" id="selectRazas">
+//       </select>
+//     </div>
+//     <button class="hero__btn-primary">Buscar</button>
+//   `
+//   hero.appendChild(template);
+
 export function main() {
 
   const lista = document.querySelector("#selectRazas"); 
-  
+ 
   fetch("https://dog.ceo/api/breeds/list/all")
     .then(response => response.json())
     .then(data => {
@@ -53,5 +66,6 @@ export function main() {
     }
   })
 }
+
 
   

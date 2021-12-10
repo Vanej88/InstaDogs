@@ -86,6 +86,70 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/contacto.js":
+/*!****************************!*\
+  !*** ./src/js/contacto.js ***!
+  \****************************/
+/*! exports provided: contact */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "contact", function() { return contact; });
+function contact() {
+  var link = document.querySelector(".menu__link--contact");
+  link.onclick = callback;
+
+  function callback(event) {
+    var contactSection = document.querySelector('.hero');
+    contactSection.innerHTML = '';
+    var contactContent = document.createElement('div');
+    contactContent.classList.add('contact');
+    var contactTitle = document.createElement('h2');
+    contactTitle.classList.add('knowus__title');
+    contactTitle.innerHTML = 'Contáctanos';
+    contactContent.appendChild(contactTitle);
+    var contactText = document.createElement('p');
+    contactText.classList.add('contact__text');
+    contactText.innerHTML = 'Para conocer a tu nuevo compañero peludo, puedes escribirnos';
+    contactContent.appendChild(contactText);
+    var contactForm = document.createElement('form');
+    var nameLabel = document.createElement('label');
+    var nameInput = document.createElement('input');
+    var phoneLabel = document.createElement('label');
+    var phoneInput = document.createElement('input');
+    var emailLabel = document.createElement('label');
+    var emailInput = document.createElement('input');
+    var textLabel = document.createElement('label');
+    var textInput = document.createElement('textarea');
+    contactForm.classList.add('contact__form');
+    nameLabel.classList.add('form-label');
+    nameLabel.innerHTML = 'Déjanos tu nombre y apellidos:';
+    nameInput.classList.add('form-input');
+    phoneLabel.classList.add('form-label');
+    phoneLabel.innerHTML = '¿A cuál número te podemos llamar?';
+    phoneInput.classList.add('form-input');
+    emailLabel.classList.add('form-label');
+    emailLabel.innerHTML = '¿Cuál es tu e-mail?';
+    emailInput.classList.add('form-input');
+    textLabel.classList.add('form-label');
+    textLabel.innerHTML = 'Queremos escuchar tus preguntas o tu historia:';
+    textInput.classList.add('form-input');
+    contactForm.appendChild(nameLabel);
+    contactForm.appendChild(nameInput);
+    contactForm.appendChild(phoneLabel);
+    contactForm.appendChild(phoneInput);
+    contactForm.appendChild(emailLabel);
+    contactForm.appendChild(emailInput);
+    contactForm.appendChild(textLabel);
+    contactForm.appendChild(textInput);
+    contactContent.appendChild(contactForm);
+    contactSection.appendChild(contactContent);
+  }
+}
+
+/***/ }),
+
 /***/ "./src/js/gallery.js":
 /*!***************************!*\
   !*** ./src/js/gallery.js ***!
@@ -98,47 +162,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "main", function() { return main; });
 function main() {
   var lista = document.querySelector("#selectRazas");
-  fetch("https://dog.ceo/api/breeds/list/all").then(response => response.json()).then(data => {
-    var dog = Object.keys(data.message);
+  var btnHero = document.querySelector("#logo-link");
+  btnHero.onclick = callback;
 
-    for (var item of dog) {
-      var option = document.createElement('option');
-      option.setAttribute('class', 'raza-option');
-      option.setAttribute('value', item);
-      option.innerHTML = item;
-      lista.appendChild(option);
-    }
+  function callback(event) {
+    fetch("https://dog.ceo/api/breeds/list/all").then(response => response.json()).then(data => {
+      var dog = Object.keys(data.message);
 
-    var buttom = document.querySelector(".hero__btn-primary");
-    buttom.onclick = callback;
+      for (var item of dog) {
+        var option = document.createElement('option');
+        option.setAttribute('class', 'raza-option');
+        option.setAttribute('value', item);
+        option.innerHTML = item;
+        lista.appendChild(option);
+      }
 
-    function callback(event) {
-      var raza = lista.value;
-      var galeria = document.querySelector('.gallery__container');
-      galeria.innerHTML = "";
-      fetch("https://dog.ceo/api/breed/".concat(raza, "/images/random/8")).then(response => response.json()).then(data => {
-        var dogImg = data.message;
-        console.log(dogImg);
+      var buttom = document.querySelector(".hero__btn-primary");
+      buttom.onclick = callback;
 
-        for (var _item of dogImg) {
-          var title = document.querySelector('#galleryTitle');
-          var contenedorCol = document.createElement("div");
-          var contenedorBoxImg = document.createElement("div");
-          var card = document.createElement("img");
-          title.innerHTML = "Galer\xEDa de ".concat(raza);
-          contenedorCol.classList.add('gallery__col');
-          contenedorBoxImg.classList.add('gallery__box-img');
-          card.classList.add('gallery__img');
-          card.setAttribute('src', _item);
-          contenedorBoxImg.appendChild(card);
-          contenedorCol.appendChild(contenedorBoxImg);
-          galeria.appendChild(contenedorCol);
-        }
+      function callback(event) {
+        var raza = lista.value;
+        var galeria = document.querySelector('.gallery__container');
+        galeria.innerHTML = "";
+        fetch("https://dog.ceo/api/breed/".concat(raza, "/images/random/8")).then(response => response.json()).then(data => {
+          var dogImg = data.message;
+          console.log(dogImg);
 
-        window.scrollTo(0, window.innerHeight);
-      });
-    }
-  });
+          for (var _item of dogImg) {
+            var title = document.querySelector('#galleryTitle');
+            var contenedorCol = document.createElement("div");
+            var contenedorBoxImg = document.createElement("div");
+            var card = document.createElement("img");
+            title.innerHTML = "Galer\xEDa de ".concat(raza);
+            contenedorCol.classList.add('gallery__col');
+            contenedorBoxImg.classList.add('gallery__box-img');
+            card.classList.add('gallery__img');
+            card.setAttribute('src', _item);
+            contenedorBoxImg.appendChild(card);
+            contenedorCol.appendChild(contenedorBoxImg);
+            galeria.appendChild(contenedorCol);
+          }
+
+          window.scrollTo(0, window.innerHeight);
+        });
+      }
+    });
+  }
 }
 
 /***/ }),
@@ -154,14 +223,61 @@ function main() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gallery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gallery */ "./src/js/gallery.js");
 /* harmony import */ var _responsive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./responsive */ "./src/js/responsive.js");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/main.scss */ "./src/styles/main.scss");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _knowUs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./knowUs */ "./src/js/knowUs.js");
+/* harmony import */ var _contacto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contacto */ "./src/js/contacto.js");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__);
 //import "@babel/polyfill"
+
+
 
 
 
 Object(_gallery__WEBPACK_IMPORTED_MODULE_0__["main"])();
 Object(_responsive__WEBPACK_IMPORTED_MODULE_1__["showMenu"])();
+Object(_knowUs__WEBPACK_IMPORTED_MODULE_2__["knowUs"])();
+Object(_contacto__WEBPACK_IMPORTED_MODULE_3__["contact"])();
+
+/***/ }),
+
+/***/ "./src/js/knowUs.js":
+/*!**************************!*\
+  !*** ./src/js/knowUs.js ***!
+  \**************************/
+/*! exports provided: knowUs */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "knowUs", function() { return knowUs; });
+function knowUs() {
+  var link = document.querySelector(".menu__link--know");
+  link.onclick = callback;
+
+  function callback(event) {
+    var knowSection = document.querySelector('.hero');
+    knowSection.innerHTML = '';
+    var knowContent = document.createElement('div');
+    knowContent.classList.add('knowus-container');
+    var knowTitle = document.createElement('h2');
+    knowTitle.classList.add('knowus__title');
+    knowTitle.innerHTML = '¡Te damos la bienvenida!';
+    knowContent.appendChild(knowTitle);
+    var knowText1 = document.createElement('p');
+    knowText1.classList.add('knowus__text');
+    knowText1.innerHTML = 'Si has llegado hasta aquí, es porque compartimos una visión: Somos amantes de los perros y creemos que cada uno de ellos merece una vida y familia llena de amor y bienestar. <br><br>';
+    knowContent.appendChild(knowText1);
+    var knowText2 = document.createElement('p');
+    knowText2.classList.add('knowus__text');
+    knowText2.innerHTML = 'InstaDogs es una ventana para poder conocer a tu posible futuro miembro de familia.';
+    knowContent.appendChild(knowText2);
+    var icons = document.createElement('span');
+    icons.classList.add('knowus__icons');
+    icons.innerHTML = '<i class="fab fa-instagram"></i> <br> <i class="fab fa-twitter"></i> <br> <i class="fab fa-facebook"></i> <br>';
+    knowContent.appendChild(icons);
+    knowSection.appendChild(knowContent);
+  }
+}
 
 /***/ }),
 

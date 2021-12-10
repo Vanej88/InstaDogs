@@ -1,0 +1,25 @@
+.knowus-container{
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.knowus {
+
+    &__title{
+        font-size: 32px;
+        margin: 32px 8px;
+    }
+
+    &__text{
+        line-height: 2;
+        font-size: 24px;
+    }
+
+    &__icons{    
+        display: flex;
+        justify-content: space-around;
+        max-width: 50%;
+        margin: 32px auto;  
+        font-size: 24px;
+    }
+}
